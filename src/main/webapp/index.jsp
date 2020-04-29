@@ -9,14 +9,18 @@
 </head>
 <body>
 	<h1>Registro Simple de usuario</h1>
-	<form action="loguearse.action" method="POST">
+	<form action="alta_producto.action" method="POST">
 		<div>
-			<label for="usuario">Usuario</label>
-			<input type="text" name="usuario" id="usuario">
+			<label for="nombre">Nombre</label>
+			<input type="text" name="nombre" id="nombre">
 		</div>
 		<div>
-			<label for="password">Contraseña</label>
-			<input type="text" name="password" id="password">
+			<label for="descripcion">Contraseña</label>
+			<input type="input" name="descripcion" id="descripcion">
+		</div>
+		<div>
+			<label for="precio">Precio</label>
+			<input type="text" name="precio" id="precio">
 		</div>
 		<input type="submit">
 	</form>
