@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.opensymphony.xwork2.Action;
-
 public class ControllerServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -17,7 +15,7 @@ public class ControllerServlet extends HttpServlet {
 		String direccion=request.getRequestURI();
 		int posUltimaBarra=direccion.lastIndexOf('/');
 		String accion = direccion.substring(posUltimaBarra+1);
-		String result=Action.SUCCESS;
+		String result="success";
 		if (accion.equals("alta_producto.action")) {
 			ProductoAction pa = new ProductoAction();
 			pa.setNombre(request.getParameter("nombre"));
@@ -35,9 +33,9 @@ public class ControllerServlet extends HttpServlet {
 		
 		String vistaURL=null;
 		if (accion.equals("alta_producto.action")) {
-			if (result.equals(Action.SUCCESS)) {
+			if (result.equals("success")) {
 				vistaURL = "/WEB-INF/jsp/altaproducto.jsp";	
-			} else if (result.equals(Action.INPUT)) {
+			} else if (result.equals("input")) {
 				vistaURL = "/index.jsp";	
 			}		
 		} else {
