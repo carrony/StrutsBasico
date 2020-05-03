@@ -12,7 +12,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.opensymphony.xwork2.Action;
 
 public class FilterDispatcher implements Filter {
 	private FilterConfig filterConfig;
@@ -30,7 +29,7 @@ public class FilterDispatcher implements Filter {
 		String direccion=req.getRequestURI();
 		int posUltimaBarra=direccion.lastIndexOf('/');
 		String accion = direccion.substring(posUltimaBarra+1);
-		String result=Action.SUCCESS;
+		String result="succes";
 		if (accion.equals("alta_producto.action")) {
 			ProductoAction pa = new ProductoAction();
 			pa.setNombre(req.getParameter("nombre"));
@@ -48,9 +47,9 @@ public class FilterDispatcher implements Filter {
 		
 		String vistaURL=null;
 		if (accion.equals("alta_producto.action")) {
-			if (result.equals(Action.SUCCESS)) {
+			if (result.equals("success")) {
 				vistaURL = "/WEB-INF/jsp/altaproducto.jsp";	
-			} else if (result.equals(Action.INPUT)) {
+			} else if (result.equals("input")) {
 				vistaURL = "/index.jsp";	
 			}	
 		} else {

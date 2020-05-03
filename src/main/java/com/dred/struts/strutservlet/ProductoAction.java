@@ -1,8 +1,6 @@
 package com.dred.struts.strutservlet;
 
-import com.opensymphony.xwork2.ActionSupport;
-
-public class ProductoAction extends ActionSupport {
+public class ProductoAction {
 	private static final long serialVersionUID = 1L;
 
 	private String nombre;
@@ -41,8 +39,8 @@ public void setPrecio(String cadPrecio) {
 
 	public String execute() throws Exception {
 		if (this.precio==-1) {
-			return INPUT;
+			return "input";
 		}
-		return SUCCESS;
+		return "success";
 	}
 }
