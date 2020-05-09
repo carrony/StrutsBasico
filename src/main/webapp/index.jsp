@@ -15,7 +15,7 @@
 	</style>
 </head>
 <body>
-	<h1>Registro Simple de usuario</h1>
+	<h1>Registrar un producto nuevo</h1>
 	<form action="alta_producto.action" method="POST">
 		<div>
 			<label for="nombre">Nombre</label>
